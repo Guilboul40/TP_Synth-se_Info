@@ -3,8 +3,11 @@
 Question 1:
 On importe les librairies et fichiers nécessaires:
 `#include <stdio.h>`
+
 `#include <stdlib.h>`
+
 `#include <unistd.h>`
+
 `#include <string.h>`
 
 On code un programme permettant d'afficher un simple message d'accueil:
