@@ -8,7 +8,8 @@ On importe les librairies et fichiers nécessaires:
 #include <string.h>`
 
 On code un programme permettant d'afficher un simple message d'accueil:
-`#define WELCOME_MESSAGE "Bienvenue dans le Shell ENSEA !\nPour quitter, tapez 'exit'.\n"
+`
+#define WELCOME_MESSAGE "Bienvenue dans le Shell ENSEA !\nPour quitter, tapez 'exit'.\n"
 #define PROMPT "enseash %\n"
 
 void show_message(void){
@@ -19,7 +20,8 @@ void show_message(void){
 
 int main(void){
     show_message();
-}`
+}
+`
 
 On observe bien le message dans le terminal:
 ![](TP1_Info_Q1.jpg)
