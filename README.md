@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/43e15794-ce93-45a1-806a-038c24e3d73c)# TP_Synthese Info
+# TP_Synthese Info
 ## Compte rendu - TP1 - Seance 1
 Question 1:
 On importe les librairies et fichiers nécessaires:
@@ -36,4 +36,5 @@ On code un programme permettant d'afficher un simple message d'accueil:
 
 
 On observe bien le message dans le terminal:
-!(TP1_Info_Q1.jpg)
+
+![image](https://github.com/user-attachments/assets/43e15794-ce93-45a1-806a-038c24e3d73c)
