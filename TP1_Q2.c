@@ -6,7 +6,12 @@
 #include <sys/wait.h>
 
 #define MAX_CMD_LEN 1024
+#define PROMPT "enseash %\n"
+#define CODE_ERROR_READING "\nErreur de lecture ou fin de fichier.\n"
+#define CODE_ERROR_EXEC "Erreur d'exécution de la commande.\n"
 
+
+//On crée une fonction write_message qui permet de réduire, d'alléger le code des longues lignes "write"
 void write_message(const char *message)
 {
     write(1, message, strlen(message));
@@ -17,30 +22,22 @@ ssize_t read_message(char *message)
     ssize_t bytesRead = read(0, message, MAX_CMD_LEN - 1);
     if (bytesRead > 0)
     {
-        message[bytesRead] = '\0'; // Null-terminate the input
+        message[bytesRead] = '\0'; 
     }
     return bytesRead;
 }
 
-int main()
-{
-
-    // Affichage du message d'accueil
-    write_message("$ ./enseash \n");
-    write_message("Bienvenue dans le Shell ENSEA.\n");
-    write_message("Pour quitter, tapez 'exit'.\n");
-
+int main(){
     char command[MAX_CMD_LEN];
-
     while (1)
     {
-        write_message("enseash %% \n");
+        write_message(PROMPT);
 
         ssize_t bytesRead = read_message(command);
         if (bytesRead <= 0)
         {
             // If read fails or EOF is encountered
-            write_message("\nErreur de lecture ou fin de fichier.\n");
+            write_message(CODE_ERROR_READING);
             break;
         }
 
@@ -64,10 +61,10 @@ int main()
         if (pid == 0)
         {
             // Processus fils
-            char *argv[] = {command, NULL}; // Préparer les arguments pour exec
+            char *argv[] = {command, NULL}; // Préparer les arguments pour exe
             execvp(argv[0], argv);          // Exécuter la commande
             // Si execvp échoue
-            write_message("Erreur d'exécution de la commande.\n");
+            write_message(CODE_ERROR_EXEC);
             exit(1);
         }
     }
