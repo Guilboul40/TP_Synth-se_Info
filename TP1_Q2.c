@@ -34,14 +34,13 @@ int main(){
         write_message(PROMPT);
 
         ssize_t bytesRead = read_message(command);
-        if (bytesRead <= 0)
+        
+        if (bytesRead <= 0) //Si la lecture n'a pas fonctionné
         {
-            // If read fails or EOF is encountered
             write_message(CODE_ERROR_READING);
             break;
         }
 
-        // Remove the trailing newline character (if present)
         size_t len = strlen(command);
         if (len > 0 && command[len - 1] == '\n')
         {
@@ -49,21 +48,21 @@ int main(){
         }
         
 
-        // Créer un processus fils pour exécuter la commande
+        // On crée un processus fils pour exécuter la commande
         pid_t pid = fork();
         if (pid > 0)
         {
             // Processus père
             int status;
-            waitpid(pid, &status, 0); // Attendre que le fils termine
+            waitpid(pid, &status, 0); // On attend que le processus fils termine
         }
 
         if (pid == 0)
         {
             // Processus fils
-            char *argv[] = {command, NULL}; // Préparer les arguments pour exe
-            execvp(argv[0], argv);          // Exécuter la commande
-            // Si execvp échoue
+            char *argv[] = {command, NULL}; 
+            execvp(argv[0], argv);
+            // Si la commande échoue on applique par défaut la commande exit() que l'on va ajouter dans la question suivante
             write_message(CODE_ERROR_EXEC);
             exit(1);
         }
