@@ -46,11 +46,47 @@ int main(){
         {
             command[len - 1] = '\0';
         }
+
+
+
+
+
+
         
-        // Check for "exit" command
+        
+        // Question 3: On ajoute la commande exit qui permet d'arrêter le processus père et de sortir du mini shell
         if (strcmp(command, "exit") == 0)
         {
             write_message("Au revoir !\n");
             break;
         }
-...
+
+
+
+
+
+
+
+        
+        // On crée un processus fils pour exécuter la commande
+        pid_t pid = fork();
+        if (pid > 0)
+        {
+            // Processus père
+            int status;
+            waitpid(pid, &status, 0); // On attend que le processus fils termine
+        }
+
+        if (pid == 0)
+        {
+            // Processus fils
+            char *argv[] = {command, NULL}; 
+            execvp(argv[0], argv);
+            // Si la commande échoue on applique par défaut la commande exit() que l'on va ajouter dans la question suivante
+            write_message(CODE_ERROR_EXEC);
+            exit(1);
+        }
+    }
+
+    return 0;
+}
