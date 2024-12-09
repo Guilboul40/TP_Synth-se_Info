@@ -35,7 +35,7 @@ void execute_command(char *command) {
             snprintf(prompt, sizeof(prompt), "enseash [sign:%d] %% ", signal_number);
         }
         // Affichage du prompt
-        printf("%s", prompt);
+        write_message(PROMPT);
     } else {
         perror("fork échoué");
     }
