@@ -48,10 +48,24 @@ Par contre si on rentre une commande inconnue, on signale une erreur:
 
 ![TP1_Info_Q2b](https://github.com/user-attachments/assets/3f47621f-0253-4852-a206-ff15dee4362d)
 
-Question 3: 
-On reprend le programme de la question 2 en ajoutant une condition. En effet si la commande lue par le programme correspond à "exit" alors on quitte le minishell. On ajoute donc les lignes des codes suivantes:
 
-'
+Question 3: 
+On reprend le programme de la question 2 en ajoutant une condition. En effet, si la commande lue par le programme correspond à "exit" alors on quitte le minishell. On ajoute donc les lignes des codes suivantes:
+
+'if (strcmp(command, "exit") == 0)'
+
+'        {'
+
+'            write_message("Au revoir !\n");'
+
+'            break;'
+
+'        }'
+
+On obtient bien le résultat attendu en lançant le programme:
+
+![TP1_Info_Q3](https://github.com/user-attachments/assets/562f0641-6741-4ec6-866e-2a675c61a27c)
+
 
 Question 4: 
 On rentre le code nécessaire pour la question:
