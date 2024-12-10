@@ -83,7 +83,7 @@ int main(){
             // Processus fils
             char *argv[] = {command, NULL}; 
             execvp(argv[0], argv);
-            // Si la commande échoue on applique par défaut la commande exit() que l'on va ajouter dans la question suivante
+            // Si la commande echoue encore ici, on effectue le "exit" manuellement, on le force
             write_message(CODE_ERROR_EXEC);
             exit(1);
         }
