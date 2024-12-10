@@ -8,6 +8,7 @@
 #include <newlib/time.h>  //Pour Windows
 
 #define PROMPT "enseash %% "
+#define MAX_SIZE_CHAR 256
 
 void write_message(const char *message)
 {
@@ -26,7 +27,7 @@ void execute_command(char *command) {
         // Parent
         int status;
         waitpid(pid, &status, 0);
-        char prompt[256];
+        char prompt[MAX_SIZE_CHAR];
         struct timespec time;  // le problème semble venir de la déclaration de time qui ne doit pas être la bonne mais nous n'avons pas réussi à le régler dans les temps
 
         // Affichage du code de retour ou du signal
@@ -45,7 +46,7 @@ void execute_command(char *command) {
 }
 
 int main() {
-    char command[256];
+    char command[MAX_SIZE_CHAR];
 
     while (1) {
         write_message(PROMPT);
