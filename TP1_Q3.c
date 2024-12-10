@@ -9,6 +9,7 @@
 #define PROMPT "enseash %\n"
 #define CODE_ERROR_READING "\nErreur de lecture ou fin de fichier.\n"
 #define CODE_ERROR_EXEC "Erreur d'exécution de la commande.\n"
+#define EXIT_MESSAGE "Au revoir!\n"
 
 
 //On crée une fonction write_message qui permet de réduire, d'alléger le code des longues lignes "write"
@@ -57,7 +58,7 @@ int main(){
         // Question 3: On ajoute la commande exit qui permet d'arrêter le processus père et de sortir du mini shell
         if (strcmp(command, "exit") == 0)
         {
-            write_message("Au revoir !\n");
+            write_message(EXIT_MESSAGE);
             break;
         }
 
