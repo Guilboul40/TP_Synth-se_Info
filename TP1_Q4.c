@@ -6,6 +6,7 @@
 #include <string.h>
 
 #define PROMPT "enseash %% "
+#define MAX_SIZE_CHAR 256
 
 //On utilise toujours cette mini fonction qui reproduit l'effet d'un printf et qui rend le code moins dense
 void write_message(const char *message)
@@ -25,7 +26,7 @@ void execute_command(char *command) {
         // Parent
         int status;
         waitpid(pid, &status, 0); //Attente que le processus fils soit terminé
-        char prompt[256];
+        char prompt[MAX_SIZE_CHAR];
 
         // Affichage du code de retour ou du signal
         if (WIFEXITED(status)) {
@@ -43,7 +44,7 @@ void execute_command(char *command) {
 }
 
 int main() {
-    char command[256];
+    char command[MAX_SIZE_CHAR];
 
     while (1) {
         write_message(PROMPT);
