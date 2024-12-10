@@ -23,7 +23,8 @@ void execute_command(char *command) {
         execvp(args[0], args);
         perror("execvp échoué");
         exit(EXIT_FAILURE);
-    } else if (pid > 0) {
+    } 
+    else if (pid > 0) {
         // Parent
         int status;
         waitpid(pid, &status, 0);
@@ -34,13 +35,15 @@ void execute_command(char *command) {
         if (WIFEXITED(status)) {
             int return_code = WEXITSTATUS(status);
             snprintf(prompt, sizeof(prompt), "enseash [exit:%d|%d] %% ", return_code, clock_gettime(CLOCK_REALTIME, &time));
-        } else if (WIFSIGNALED(status)) {
+        } 
+        else if (WIFSIGNALED(status)) {
             int signal_number = WTERMSIG(status);
             snprintf(prompt, sizeof(prompt), "enseash [sign:%d|%d] %% ", signal_number, clock_gettime(CLOCK_REALTIME, &time));
         }
         // Affichage du prompt
         write_message(PROMPT);
-    } else {
+    } 
+    else {
         perror("fork échoué");
     }
 }
