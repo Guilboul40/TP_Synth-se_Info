@@ -14,7 +14,7 @@
 //On crée une fonction write_message qui permet de réduire, d'alléger le code des longues lignes "write"
 void write_message(const char *message)
 {
-    write(1, message, strlen(message));
+    write(STDOUT_FILENO, message, strlen(message));
 }
 
 ssize_t read_message(char *message)
