@@ -27,7 +27,7 @@ void execute_command(char *command) {
         int status;
         waitpid(pid, &status, 0);
         char prompt[256];
-        struct timespec time;
+        struct timespec time;  // le problème semble venir de la déclaration de time qui ne doit pas être la bonne mais nous n'avons pas réussi à le régler dans les temps
 
         // Affichage du code de retour ou du signal
         if (WIFEXITED(status)) {
@@ -38,7 +38,7 @@ void execute_command(char *command) {
             snprintf(prompt, sizeof(prompt), "enseash [sign:%d|%d] %% ", signal_number, clock_gettime(CLOCK_REALTIME, &time));
         }
         // Affichage du prompt
-        printf("%s", prompt);
+        write_message(PROMPT);
     } else {
         perror("fork échoué");
     }
@@ -48,9 +48,9 @@ int main() {
     char command[256];
 
     while (1) {
-        write_message(PROMPT); // Afficher le prompt de base
+        write_message(PROMPT);
         fgets(command, sizeof(command), stdin);
-        command[strcspn(command, "\n")] = 0;
+        command[strcspn(command, "\n")] = 0; //Permet de repérer ENTRER donc la demande d'exécution de la commande
 
         if (strcmp(command, "exit") == 0) {
             break; // Sortir du minishell
