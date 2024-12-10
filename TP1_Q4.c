@@ -10,7 +10,7 @@
 //On utilise toujours cette mini fonction qui reproduit l'effet d'un printf et qui rend le code moins dense
 void write_message(const char *message)
 {
-    write(1, message, strlen(message));
+    write(STDOUT_FILENO, message, strlen(message));
 }
 
 void execute_command(char *command) {
