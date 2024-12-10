@@ -22,7 +22,8 @@ void execute_command(char *command) {
         execvp(args[0], args);
         perror("execvp échoué");
         exit(EXIT_FAILURE);
-    } else if (pid > 0) {
+    } 
+    else if (pid > 0) {
         // Parent
         int status;
         waitpid(pid, &status, 0); //Attente que le processus fils soit terminé
@@ -32,13 +33,15 @@ void execute_command(char *command) {
         if (WIFEXITED(status)) {
             int return_code = WEXITSTATUS(status);
             snprintf(prompt, sizeof(prompt), "enseash [exit:%d] %% ", return_code); //Ici nous sommes obligés d'utiliser le snprintf pour pouvoir intégrer des valeurs dans le message
-        } else if (WIFSIGNALED(status)) {
+        } 
+        else if (WIFSIGNALED(status)) {
             int signal_number = WTERMSIG(status);
             snprintf(prompt, sizeof(prompt), "enseash [sign:%d] %% ", signal_number); //Idem
         }
         // Affichage du prompt
         write_message(PROMPT);
-    } else {
+    } 
+    else {
         perror("fork échoué");
     }
 }
