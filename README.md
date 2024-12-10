@@ -40,8 +40,18 @@ On observe bien le message dans le terminal:
 ![image](https://github.com/user-attachments/assets/43e15794-ce93-45a1-806a-038c24e3d73c)
 
 Question 2:
+On rpogramme le code joint dans le gitHub Q2 afin d'obtenir une lecture de commmande ainsi que son analyse et enfin son exécution. Par exemple, en entrant la commande "date", on obtient la réponse suivante dans le terminal:
 
-Question 3:
+![TP1_Info_Q2](https://github.com/user-attachments/assets/72464532-af4d-4afb-bffa-f0f788cdebfd)
+
+Par contre si on rentre une commande inconnue, on signale une erreur:
+
+![TP1_Info_Q2b](https://github.com/user-attachments/assets/3f47621f-0253-4852-a206-ff15dee4362d)
+
+Question 3: 
+On reprend le programme de la question 2 en ajoutant une condition. En effet si la commande lue par le programme correspond à "exit" alors on quitte le minishell. On ajoute donc les lignes des codes suivantes:
+
+'
 
 Question 4: 
 On rentre le code nécessaire pour la question:
