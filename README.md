@@ -52,15 +52,15 @@ Par contre si on rentre une commande inconnue, on signale une erreur:
 Question 3: 
 On reprend le programme de la question 2 en ajoutant une condition. En effet, si la commande lue par le programme correspond à "exit" alors on quitte le minishell. On ajoute donc les lignes des codes suivantes:
 
-'if (strcmp(command, "exit") == 0)'
+`if (strcmp(command, "exit") == 0)`
 
-'        {'
+`        {`
 
-'            write_message("Au revoir !\n");'
+`            write_message("Au revoir !\n");`
 
-'            break;'
+`            break;`
 
-'        }'
+`        }`
 
 On obtient bien le résultat attendu en lançant le programme:
 
