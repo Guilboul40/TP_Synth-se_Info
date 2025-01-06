@@ -43,6 +43,9 @@ Avec cette première question, on n' obtient pas d'autre résultat qu'une sortie
 
 ## Question 2
 
+On code désormais un programme qui permet de récupérer l'adresse du serveur (ici, on essayera avec le serveur local ensea). 
+
+
 `#include <stdlib.h>`
 
 `#include <unistd.h>`
@@ -155,4 +158,7 @@ Avec cette première question, on n' obtient pas d'autre résultat qu'une sortie
 
 `}`
 
-![Q2_TP2_Info](https://github.com/user-attachments/assets/b2312082-3b0c-400c-b4b1-643dddc6c4f0)
+On entre la commande " ./TP2_Info_Q2 localhost ensea.png " dans le terminal et on obtient l'adresse du serveur comme prévu:
+
+![Q2_TP2_Info](https://github.com/user-attachments/assets/d95e1717-278a-4c0d-ad63-df3219581128)
+
