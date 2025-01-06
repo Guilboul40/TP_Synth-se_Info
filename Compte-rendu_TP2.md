@@ -12,7 +12,7 @@
 
 `#include <arpa/inet.h>` 
 
-``
+
 
 `#define USAGE_MSG "Usage: %s <host> <file>\n"`
 
@@ -22,7 +22,7 @@
 
 `#define SOCKET_ERROR_MSG "Error creating socket.\n"`
 
-``
+
 
 `// Question 1: Utilisation`
 
@@ -106,7 +106,7 @@
 
 `    const char *filename;`
 
-``
+
 
 `    // Step 1: Handle command-line arguments`
 
@@ -114,7 +114,7 @@
 
 `    printf("Host: %s, File: %s\n", host, filename);`
 
-``
+
 
 `    // Step 2: Obtain the address`
 
@@ -126,7 +126,7 @@
 
 `    }`
 
-``
+
 
 `    // Step 3: Create the socket`
 
