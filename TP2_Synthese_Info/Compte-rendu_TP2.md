@@ -92,7 +92,7 @@ On code désormais un programme qui permet de récupérer l'adresse du serveur (
 
 `    char adress_str[BUFSIZE];`
 
-`    memset(&hints, 0, sizeof(struct addrinfo));`
+`    memset(&hints, 0, sizeof(struct addrinfo));  //Permet d'initialiser hints`
 
 `    hints.ai_family = AF_UNSPEC;    // Autorise les IPV4 ou IPV6`
 
@@ -110,7 +110,7 @@ On code désormais un programme qui permet de récupérer l'adresse du serveur (
 
 `    for (rp = result; rp != NULL; rp = rp->ai_next) {`
 
-`       if (rp->ai_family == AF_INET) { // IPv4`
+`        if (rp->ai_family == AF_INET) { // IPv4`
 
 `            struct sockaddr_in *ipv4 = (struct sockaddr_in *)rp->ai_addr;`
 
