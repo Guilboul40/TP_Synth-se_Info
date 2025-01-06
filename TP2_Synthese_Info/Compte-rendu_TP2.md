@@ -168,3 +168,70 @@ On entre la commande " ./TP2_Info_Q2 localhost ensea.png " dans le terminal et o
 
 ![Q2_TP2_Info](https://github.com/user-attachments/assets/d95e1717-278a-4c0d-ad63-df3219581128)
 
+## Question 3:
+
+On récupère le code de la question 2 et on ajoute une fonction "  " qui permet de se connecter au serveur. On modifie légèrement le main pour qu'il exécute cette nouvelle fonction. On obtient les modifications suivantes:
+
+`void create_socket(){`
+
+`    int client_socket = socket(result->ai_family, result->ai_socktype, result->ai_protocol);`
+
+`    if (client_socket == -1) {`
+
+`        prompt(ERROR_SOCKET);`
+
+`        exit(EXIT_FAILURE);`
+
+`    }`
+
+`    // Connexion au serveur`
+
+`    status = connect(client_socket, result->ai_addr, result->ai_addrlen);`
+
+`    if (status == -1) {`
+
+`        prompt(ERROR_CONNECT);`
+
+`        close(client_socket);`
+
+`        exit(EXIT_FAILURE);`
+
+`    } else {`
+
+`        //Envoie du message de connexion réussie`
+
+`        prompt(CONNECT_SUCCESS);`
+
+`        send(client_socket,CONNECT_SUCCESS,strlen(CONNECT_SUCCESS),0);`
+
+`    }`
+
+`}`
+
+``
+
+`int main(int argc, char* argv[]){`
+
+`    char *host = argv[1];`
+
+`    char *file = argv[2]; //Inutile ici`
+
+`    //Vérification de la commande`
+
+`    if(argc != 3){`
+
+`        write(fd, ERROR_INPUT, strlen(ERROR_INPUT));`
+
+`        exit(EXIT_FAILURE);`
+
+`    }`
+
+`    return_adress(host);`
+
+`    create_socket();`
+
+`    freeaddrinfo(result);`
+
+`    return 0;`
+
+`}`
