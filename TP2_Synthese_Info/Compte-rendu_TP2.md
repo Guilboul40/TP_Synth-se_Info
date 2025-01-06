@@ -178,7 +178,7 @@ On récupère le code de la question 2 et on ajoute une fonction "  " qui permet
 
 `#define ERROR_CONNECT "Erreur lors de l'établissement de la connexion.\n"`
 
-`#define CONNECT_SUCCESS "Connecté au réseau.\n"`
+`#define CONNECT_SUCCESS "Connecté au serveur.\n"`
 
 ``
 
@@ -245,5 +245,8 @@ On récupère le code de la question 2 et on ajoute une fonction "  " qui permet
 `    return 0;`
 
 `}`
+
+
+On teste la question 3 de la même façon que pour la question 2, avec la commande " ./TP2_Info_Q3 localhost ensea.png " et on obtient bien le réultat escompté soit la connexion au serveur et donc l'affichage du message correpondant:
 
 <img width="194" alt="Q3 TP2" src="https://github.com/user-attachments/assets/2c80d0ab-a59f-458c-b0d1-bc2cea25a1cf" />
