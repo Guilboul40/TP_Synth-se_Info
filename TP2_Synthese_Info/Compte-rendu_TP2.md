@@ -38,3 +38,7 @@ puttftp pour obtenir les informations de requêtes (serveur et fichier). On prog
 `    return 0;`
 
 `}`
+
+Avec ce premier programme, on n' obtient pas d'autre résultat qu'une sortie de programme avec un affichage d'erreur commande puisque pour l'instant, on n'envoie rien au programme.
+
+## Question 2
