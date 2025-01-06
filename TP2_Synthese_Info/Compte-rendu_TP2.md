@@ -56,7 +56,7 @@ On code désormais un programme qui permet de récupérer l'adresse du serveur (
 
 `#include <arpa/inet.h>`
 
-
+``
 
 `#define BUFSIZE 128`
 
@@ -68,6 +68,7 @@ On code désormais un programme qui permet de récupérer l'adresse du serveur (
 
 `#define ERROR_ADRESS "Erreur lors de la résolution de l'adresse.\n"`
 
+``
 
 `//On construit une fonction "printf" à partir d'un write pour éviter de saturer le code et de se répéter`
 
@@ -77,7 +78,7 @@ On code désormais un programme qui permet de récupérer l'adresse du serveur (
     
 `}`
 
-
+``
 
 `void return_adress(char *host){`
 
@@ -133,11 +134,11 @@ On code désormais un programme qui permet de récupérer l'adresse du serveur (
 
 `    }`
 
-
-
 `freeaddrinfo(result);`
 
 `}`
+
+``
 
 `int main(int argc, char* argv[]){`
 
