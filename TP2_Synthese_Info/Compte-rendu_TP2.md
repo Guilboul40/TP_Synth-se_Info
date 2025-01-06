@@ -172,6 +172,14 @@ On entre la commande " ./TP2_Info_Q2 localhost ensea.png " dans le terminal et o
 
 On récupère le code de la question 2 et on ajoute une fonction "  " qui permet de se connecter au serveur. On modifie légèrement le main pour qu'il exécute cette nouvelle fonction. On obtient les modifications suivantes:
 
+`#define ERROR_SOCKET "Erreur lors de la création du socket.\n"`
+
+`#define ERROR_CONNECT "Erreur lors de l'établissement de la connexion.\n"`
+
+`#define CONNECT_SUCCESS "Connecté au réseau.\n"`
+
+``
+
 `void create_socket(){`
 
 `    int client_socket = socket(result->ai_family, result->ai_socktype, result->ai_protocol);`
