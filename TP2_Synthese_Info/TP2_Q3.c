@@ -20,17 +20,17 @@ void *addr;
 char adress[BUFSIZE];
 char adress_str[BUFSIZE];
 
+//Idem fonction printf reconstruite
 void prompt(char *message){
     write(fd, message, strlen(message));
 }
 
 void return_adress(char *host){
-
     memset(&hints, 0, sizeof(struct addrinfo));
-    hints.ai_family = AF_UNSPEC;    // Allow IPv4 or IPv6
+    hints.ai_family = AF_UNSPEC;    // Autorise l'IPv4 ou l'IPv6
     hints.ai_socktype = SOCK_DGRAM;
     hints.ai_protocol = IPPROTO_UDP;
-    // Host information
+    // On récupère les informations du serveur
     status = getaddrinfo(host, "tftp", &hints, &result);
     if (status != 0) {
         prompt(ERROR_ADRESS);
@@ -44,27 +44,28 @@ void return_adress(char *host){
             struct sockaddr_in6 *ipv6 = (struct sockaddr_in6 *)rp->ai_addr;
             addr = &(ipv6->sin6_addr);
         }
-        // Convert adress to string
+        // On renvoie l'adresse du serveur en chaîne de caractère
         inet_ntop(rp->ai_family, addr, adress_str, sizeof(adress_str));
         sprintf(adress,"Address: %s\n", adress_str);
         prompt(adress);
     }
 }
-void create_socket(){
 
+//Question 3
+void create_socket(){
     int client_socket = socket(result->ai_family, result->ai_socktype, result->ai_protocol);
     if (client_socket == -1) {
         prompt(ERROR_SOCKET);
         exit(EXIT_FAILURE);
     }
-    // Connection
+    // Connexion au serveur
     status = connect(client_socket, result->ai_addr, result->ai_addrlen);
     if (status == -1) {
         prompt(ERROR_CONNECT);
         close(client_socket);
         exit(EXIT_FAILURE);
     } else {
-        //Send message
+        //Envoie du message de connexion réussie
         prompt(CONNECT_SUCCESS);
         send(client_socket,CONNECT_SUCCESS,strlen(CONNECT_SUCCESS),0);
     }
@@ -73,7 +74,7 @@ void create_socket(){
 int main(int argc, char* argv[]){
 
     char *host = argv[1];
-    char *file = argv[2];
+    char *file = argv[2]; //Inutile ici
 
     //Vérification de la commande
     if(argc != 3){
