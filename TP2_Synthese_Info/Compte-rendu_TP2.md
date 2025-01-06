@@ -13,7 +13,7 @@ puttftp pour obtenir les informations de requêtes (serveur et fichier). On prog
 
 `#include <string.h>`
 
-`#define fd 1`
+`#define fd 1 //Variable qui vaut 1 pour pouvoir utiliser les write plutôt que les printf`
 
 `#define ERROR_MESSAGE "Erreur dans la commande !\n"`
 
@@ -25,7 +25,7 @@ puttftp pour obtenir les informations de requêtes (serveur et fichier). On prog
 
 `    char *file = argv[2];`
 
-`    // Vérification de la commande (3 caractéristiques: nom du serveur(host), nom du fichier(file) et une autre dont ne se sert pas encore dans la question)`
+`    // Vérification de la commande (3 caractéristiques: nom du serveur(host), nom du fichier(file) et une autre dont ne se sert pas dans la question)`
     
 `    if(argc != 3){`
 
@@ -69,12 +69,15 @@ On code désormais un programme qui permet de récupérer l'adresse du serveur (
 `#define ERROR_ADRESS "Erreur lors de la résolution de l'adresse.\n"`
 
 
+`//On construit une fonction "printf" à partir d'un write pour éviter de saturer le code et de se répéter`
 
 `void prompt(char *message){`
 
 `    write(fd, message, strlen(message));`
     
 `}`
+
+
 
 `void return_adress(char *host){`
 
@@ -124,7 +127,7 @@ On code désormais un programme qui permet de récupérer l'adresse du serveur (
 
 `        inet_ntop(rp->ai_family, addr, adress_str, sizeof(adress_str));`
 
-`        sprintf(adress,"Address: %s\n", adress_str);`
+`        sprintf(adress,"Address: %s\n", adress_str); // On est "obligé" d'utiliser un sprintf pour afficher un message avec une valeur variable`
 
 `        prompt(adress);`
 
@@ -157,6 +160,8 @@ On code désormais un programme qui permet de récupérer l'adresse du serveur (
 `    return 0;`
 
 `}`
+
+NB: Le code signale une erreur de type "Incomplet, non autorisé" pour la variable "hints" mais cela ne pose pas de problème pour l'exécution du code.
 
 On entre la commande " ./TP2_Info_Q2 localhost ensea.png " dans le terminal et on obtient l'adresse du serveur comme prévu:
 
