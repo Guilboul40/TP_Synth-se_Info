@@ -235,3 +235,5 @@ On récupère le code de la question 2 et on ajoute une fonction "  " qui permet
 `    return 0;`
 
 `}`
+
+<img width="194" alt="Q3 TP2" src="https://github.com/user-attachments/assets/2c80d0ab-a59f-458c-b0d1-bc2cea25a1cf" />
