@@ -44,19 +44,33 @@ Avec cette première question, on n' obtient pas d'autre résultat qu'une sortie
 ## Question 2
 
 `#include <stdlib.h>`
+
 `#include <unistd.h>`
+
 `#include <string.h>`
+
 `#include <netdb.h>`
+
 `#include <arpa/inet.h>`
 
+
+
 `#define BUFSIZE 128`
+
 `#define fd 1`
+
 `#define ERROR_MESSAGE "Erreur dans la commande !\n"`
+
 `#define ERROR_INPUT "Erreur dans la commande !\nUsage: <program> <host> <file>\n"`
+
 `#define ERROR_ADRESS "Erreur lors de la résolution de l'adresse.\n"`
 
+
+
 `void prompt(char *message){`
+
     `write(fd, message, strlen(message));`
+    
 `}`
 
 `void return_adress(char *host){`
