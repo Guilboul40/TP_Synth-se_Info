@@ -9,10 +9,11 @@
 int main(int argc, char* argv[]){
     char *host = argv[1];
     char *file = argv[2];
-    // Command verification
+    // Vérification de la commande (3 caractéristiques: nom du serveur(host), nom du fichier(filename) et ...())
+    
     if(argc != 3){
         write(fd, ERROR_MESSAGE, strlen(ERROR_MESSAGE));
-        exit(EXIT_FAILURE);
+        exit(EXIT_FAILURE);    //Si la commande ne contient pas ces 3 caratéristiques, aucune action n'est exécutable, on sort du programmme.
     }
     return 0;
 }
