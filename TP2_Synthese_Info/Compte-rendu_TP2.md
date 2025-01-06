@@ -249,7 +249,5 @@ On récupère le code de la question 2 et on ajoute une fonction "  " qui permet
 
 On teste la question 3 de la même façon que pour la question 2, avec la commande " ./TP2_Info_Q3 localhost ensea.png " et on obtient bien le réultat escompté soit la connexion au serveur et donc l'affichage du message correpondant:
 
-<img width="194" alt="Q3 TP2" src="https://github.com/user-attachments/assets/2c80d0ab-a59f-458c-b0d1-bc2cea25a1cf" />
-
 ![Q3_TP2_Info](https://github.com/user-attachments/assets/3388b251-871c-4e5c-8323-d6acd527b838)
 
