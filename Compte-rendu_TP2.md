@@ -21,7 +21,8 @@
 
 `#define SOCKET_ERROR_MSG "Error creating socket.\n"`
 
-`// Function to handle command-line arguments`
+
+`// Question 1: Utilisation`
 
 `void handle_arguments(int argc, char *argv[], const char **host, const char **filename) {`
 
