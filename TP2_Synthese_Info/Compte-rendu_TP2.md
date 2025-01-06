@@ -25,7 +25,7 @@ puttftp pour obtenir les informations de requêtes (serveur et fichier). On prog
 
 `    char *file = argv[2];`
 
-`    // Vérification de la commande (3 caractéristiques: nom du serveur(host), nom du fichier(filename) et ...())`
+`    // Vérification de la commande (3 caractéristiques: nom du serveur(host), nom du fichier(file) et ...())`
     
 `    if(argc != 3){`
 
