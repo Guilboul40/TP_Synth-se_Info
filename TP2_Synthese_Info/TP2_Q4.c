@@ -137,7 +137,7 @@ int main(int argc, char* argv[]){
 	struct sockaddr src_addr;
 	socklen_t src_addrlen = sizeof(src_addr);
 	
-
+	freeaddrinfo(result);
 
     return 0;
 }
